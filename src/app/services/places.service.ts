@@ -5,15 +5,19 @@ import { Place } from './place.model';
   providedIn: 'root'
 })
 export class PlacesService {
-  private _places: Place[] = [
-    new Place('p1', 'Manhattan Mansion', 'In the Manhattan district', 'assets/nycondo.jpeg', 200.00),
+  private places: Place[] = [
+    new Place('p1', 'Manhattan Mansion', 'In the Manhattan district', 'assets/nycondo.jpeg', 200.99),
     new Place('p2', 'Hamptons Mansion', 'In the exclusive Hamptons area', 'assets/hamptons.jpg', 800.00),
     new Place('p3', 'Bel Air Mansion', 'In the exclusive and quiet Bel Air area', 'assets/belair.jpg', 850.00),
   ];
+  constructor() { }
 
-  get places() {
-    return this.places;
+  getPlaces() {
+    return [...this.places];
   }
 
-  constructor() { }
+
+  getPlace(id: string) {
+    return { ...this.places.find(p => p.id === id) };
+  }
 }
