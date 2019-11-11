@@ -25,19 +25,19 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: 'offers/offers.module#OffersPageModule'
+            loadChildren: './offers/offers.module#OffersPageModule'
           },
           {
             path: 'new',
-            loadChildren: 'offers/new-offer/new-offer.module#NewOfferPageModule'
+            loadChildren: './offers/new-offer/new-offer.module#NewOfferPageModule'
           },
           {
             path: 'edit/:placeID',
-            loadChildren: 'offers/edit-offer/edit-offer.module#EditOfferPageModule'
+            loadChildren: './offers/edit-offer/edit-offer.module#EditOfferPageModule'
           },
           {
             path: ':placeID',
-            loadChildren: 'offers/offer-bookings/offer-bookings.module#OfferBookingsPageModule'
+            loadChildren: './offers/offer-bookings/offer-bookings.module#OfferBookingsPageModule'
           }
         ]
       },
