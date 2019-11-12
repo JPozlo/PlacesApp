@@ -34,7 +34,7 @@
       <ion-col>
         <ion-list>
           <ion-item *ngFor="let place of loadedPlaces?.slice(1)"
-            [routerLink]="['/', 'places', 'tabs', 'discover', 'place.id']" routerDirection="forward"
+            [routerLink]="['/', 'places', 'tabs', 'discover', place.id]" routerDirection="forward"
             routerLinkActive="router-link-active" detail>
             <ion-thumbnail slot="start">
               <ion-img [src]="place.imageURL"> </ion-img>
