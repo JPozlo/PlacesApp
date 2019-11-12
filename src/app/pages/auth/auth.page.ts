@@ -9,14 +9,20 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AuthPage implements OnInit {
 
+  isLoading = false; // For ion spinner
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
   onLogin() {
+    this.isLoading = true;
     this.authService.login();
-
+    setTimeout(() => {
+      this.isLoading = false;
+      this.router.navigateByUrl('/places/tabs/discover');
+    }, 1500);
   }
 
 }
