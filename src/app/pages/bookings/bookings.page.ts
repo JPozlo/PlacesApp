@@ -27,6 +27,7 @@ export class BookingsPage implements OnInit {
     bookSlidingItem.close();
     this.loadedBookings.filter(m => m.id !== bookingID);
     console.log('Deleted booking of id: ' + bookingID);
+    // Cancel booking with booking id
   }
 
 }

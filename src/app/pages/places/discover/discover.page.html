@@ -32,10 +32,9 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-list>
-          <ion-item *ngFor="let place of loadedPlaces?.slice(1)"
-            [routerLink]="['/', 'places', 'tabs', 'discover', place.id]" routerDirection="forward"
-            routerLinkActive="router-link-active" detail>
+        <ion-virtual-scroll [items]="listedLoadedPlaces">
+          <ion-item *virtualItem="let place" [routerLink]="['/', 'places', 'tabs', 'discover', place.id]"
+            routerDirection="forward" routerLinkActive="router-link-active" detail>
             <ion-thumbnail slot="start">
               <ion-img [src]="place.imageURL"> </ion-img>
             </ion-thumbnail>
@@ -44,7 +43,7 @@
               <p>{{ place.description }}</p>
             </ion-label>
           </ion-item>
-        </ion-list>
+        </ion-virtual-scroll>
       </ion-col>
     </ion-row>
   </ion-grid>
